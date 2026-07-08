@@ -45,6 +45,7 @@ export const QUEST_ALIASES: Record<string, string> = {
   atoh: "A_TASTE_OF_HOPE",
   sins: "SINS_OF_THE_FATHER",
   barcrawl: "ALFRED_GRIMHANDS_BARCRAWL",
+  bmr: "THE_BLOOD_MOON_RISES",
 };
 
 const BY_ENUM = new Map<string, QuestRef>(QUESTS.map((q) => [q.enumName, q]));
