@@ -7,7 +7,7 @@
  *
  * GENERATED — do not hand-edit. Regenerate with `npm run gen:item-sources`
  * (see scripts/gen-item-sources.mjs). Source: the plugin's item-sources.tsv
- * (3811 rows). One `id<TAB>label<TAB>category` per line; an item
+ * (3815 rows). One `id<TAB>label<TAB>category` per line; an item
  * may have several rows (multiple sources).
  */
 
@@ -3821,4 +3821,8 @@ export const PACKED_ITEM_SOURCES = `5883	Abyssal Sire	BOSS
 33691	Maggot King	BOSS
 33693	Maggot King	BOSS
 33695	Maggot King	BOSS
-33697	Maggot King	BOSS`;
+33697	Maggot King	BOSS
+34027	Mad Angel	BOSS
+34030	Mad Angel	BOSS
+34033	Mad Angel	BOSS
+34042	Mad Angel	BOSS`;

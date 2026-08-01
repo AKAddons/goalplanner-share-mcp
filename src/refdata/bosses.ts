@@ -6,7 +6,7 @@
  *
  * GENERATED — do not hand-edit. Regenerate with `npm run gen:bosses` (reads the
  * plugin source via $GOAL_PLANNER_REPO; see scripts/gen-bosses.mjs).
- * Source: runelite-goal-planner boss-killcount.tsv (90 bosses).
+ * Source: runelite-goal-planner boss-killcount.tsv (91 bosses).
  */
 
 export const BOSSES: readonly string[] = [
@@ -100,6 +100,7 @@ export const BOSSES: readonly string[] = [
   "Doom of Mokhaiotl (L8)",
   "Doom of Mokhaiotl (L8+)",
   "Maggot King",
+  "Mad Angel",
 ];
 
 // Case-insensitive lookup → canonical boss name.
