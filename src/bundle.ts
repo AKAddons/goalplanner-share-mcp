@@ -56,6 +56,13 @@ export interface GoalShareDto {
   spriteId?: number;
   tooltip?: string;
   caTaskId?: number; // DTO default -1
+  /** RepeatPeriod name: NONE | DAILY | WEEKLY | MONTHLY. Additive to GPSHARE2
+   *  (plugin ADR-0006) - older decoders ignore it and import a one-shot. */
+  repeatEvery?: string;
+  /** Gain per period for a derived repeatable goal. The re-based targetValue
+   *  is deliberately NOT sent: it is the sender's progress plus the chunk, so
+   *  the recipient re-bases off their own. */
+  repeatChunk?: number;
   customColorRgb?: number; // DTO default -1
   optional?: boolean;
   autoSeeded?: boolean;

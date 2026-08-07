@@ -37,6 +37,8 @@ const goalShape = z.object({
   itemId: z.number().int().optional(),
   spriteId: z.number().int().optional(),
   caTaskId: z.number().int().optional(),
+  repeatEvery: z.enum(["NONE", "DAILY", "WEEKLY", "MONTHLY"]).optional(),
+  repeatChunk: z.number().int().nonnegative().optional(),
   targetValue: z.number().int().optional(),
   wikiUrl: z.string().optional(),
   requires: z.array(z.string()).optional().describe("ids of goals this one depends on (AND)."),
