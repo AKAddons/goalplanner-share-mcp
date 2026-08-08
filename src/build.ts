@@ -285,11 +285,18 @@ function expandGroupGoals(goals: GoalSpec[], warnings: string[]): GoalSpec[] {
     }
 
     // BOSS — named collections ("GWD", "Dagannoth Kings", "all bosses").
-    if ((type === "boss" || asGoalType(g.type) === "BOSS") && g.name && !g.bossName?.trim()) {
-      const grp = resolveBossGroup(g.name);
+    // The group name may arrive in EITHER field: `name` (label-style specs) or
+    // `bossName` (the natural field for a boss-ish string — this was the "DK
+    // imports as one untracked goal" bug). A bossName that resolves to a real
+    // single boss ("Zulrah") must never fan, so the single-boss resolver is
+    // consulted first and only an unresolvable bossName is tried as a group.
+    if (type === "boss" || asGoalType(g.type) === "BOSS") {
+      const bn = g.bossName?.trim();
+      const groupSource = !bn ? g.name : (resolveBoss(bn) ? undefined : bn);
+      const grp = groupSource ? resolveBossGroup(groupSource) : null;
       if (grp && grp.members.length > 0) {
         grp.members.forEach((b, k) => out.push({ ...g, name: b, bossName: b, id: subId(g.id, k) }));
-        warnings.push(`goal "${g.id ?? g.name}": expanded "${g.name}" into ${grp.members.length} ${grp.name} boss goals.`);
+        warnings.push(`goal "${g.id ?? groupSource}": expanded "${groupSource}" into ${grp.members.length} ${grp.name} boss goals.`);
         continue;
       }
     }
