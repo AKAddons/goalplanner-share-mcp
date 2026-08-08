@@ -7,7 +7,7 @@
  *
  * GENERATED — do not hand-edit. Regenerate with `npm run gen:quests` (runs the
  * enum from the local runelite-api jar; see scripts/gen-quests.mjs).
- * Source: runelite-api 1.12.32-SNAPSHOT (210 quests).
+ * Source: runelite-api env-override (211 quests).
  */
 
 export interface QuestRef {
@@ -76,6 +76,7 @@ export const QUESTS: readonly QuestRef[] = [
   { enumName: "ETHICALLY_ACQUIRED_ANTIQUITIES", questId: 3713, displayName: "Ethically Acquired Antiquities" },
   { enumName: "FAIRYTALE_I__GROWING_PAINS", questId: 46, displayName: "Fairytale I - Growing Pains" },
   { enumName: "FAIRYTALE_II__CURE_A_QUEEN", questId: 47, displayName: "Fairytale II - Cure a Queen" },
+  { enumName: "FALLEN_FROM_GRACE", questId: 7133, displayName: "Fallen From Grace" },
   { enumName: "FAMILY_CREST", questId: 48, displayName: "Family Crest" },
   { enumName: "FAMILY_PEST", questId: 49, displayName: "Family Pest" },
   { enumName: "FIGHT_ARENA", questId: 51, displayName: "Fight Arena" },

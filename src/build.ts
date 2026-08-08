@@ -99,6 +99,8 @@ export interface GoalSpec {
   caTaskId?: number;
   targetValue?: number;
   wikiUrl?: string;
+  repeatEvery?: string;
+  repeatChunk?: number;
   // tree edges (by id)
   requires?: string[];
   orRequires?: string[];
@@ -138,12 +140,29 @@ export interface ShareSpec {
 // misspelled section `nested`. Derived from the GoalSpec/SectionSpec interfaces;
 // keep in sync when adding a field.
 
+/**
+ * Copy the repeat fields onto an emitted goal, if the caller asked for them.
+ *
+ * Additive to GPSHARE2 per plugin ADR-0006 - no version bump, and an older
+ * decoder ignores them and imports a one-shot. NOTE the re-based targetValue is
+ * deliberately not derived here: it is the sender's own progress plus the
+ * chunk, so the recipient re-bases off theirs on import.
+ */
+function applyRepeat(dto: GoalShareDto, g: GoalSpec): void {
+  const period = g.repeatEvery?.trim().toUpperCase();
+  if (period && period !== "NONE") {
+    dto.repeatEvery = period;
+    if (g.repeatChunk && g.repeatChunk > 0) dto.repeatChunk = g.repeatChunk;
+  }
+}
+
 const GOAL_SPEC_KEYS: readonly string[] = [
   "id", "type", "name", "description",
   "skill", "level", "xp",
   "tooltip", "colorRgb", "optional",
   "skillName", "questName", "accountMetric", "bossName",
   "varbitId", "itemId", "spriteId", "caTaskId", "targetValue", "wikiUrl",
+  "repeatEvery", "repeatChunk",
   "requires", "orRequires",
 ];
 
@@ -266,11 +285,18 @@ function expandGroupGoals(goals: GoalSpec[], warnings: string[]): GoalSpec[] {
     }
 
     // BOSS — named collections ("GWD", "Dagannoth Kings", "all bosses").
-    if ((type === "boss" || asGoalType(g.type) === "BOSS") && g.name && !g.bossName?.trim()) {
-      const grp = resolveBossGroup(g.name);
+    // The group name may arrive in EITHER field: `name` (label-style specs) or
+    // `bossName` (the natural field for a boss-ish string — this was the "DK
+    // imports as one untracked goal" bug). A bossName that resolves to a real
+    // single boss ("Zulrah") must never fan, so the single-boss resolver is
+    // consulted first and only an unresolvable bossName is tried as a group.
+    if (type === "boss" || asGoalType(g.type) === "BOSS") {
+      const bn = g.bossName?.trim();
+      const groupSource = !bn ? g.name : (resolveBoss(bn) ? undefined : bn);
+      const grp = groupSource ? resolveBossGroup(groupSource) : null;
       if (grp && grp.members.length > 0) {
         grp.members.forEach((b, k) => out.push({ ...g, name: b, bossName: b, id: subId(g.id, k) }));
-        warnings.push(`goal "${g.id ?? g.name}": expanded "${g.name}" into ${grp.members.length} ${grp.name} boss goals.`);
+        warnings.push(`goal "${g.id ?? groupSource}": expanded "${groupSource}" into ${grp.members.length} ${grp.name} boss goals.`);
         continue;
       }
     }
@@ -328,6 +354,9 @@ export function buildBundle(spec: ShareSpec): BuildResult {
   goals.forEach((g, i) => {
     const id = ids[i]!;
     const { dto, res } = resolveGoal(g, i, id, warnings);
+    // Applied here, not in the per-type branches: repetition is orthogonal to
+    // goal type, and six copies is six chances to miss one.
+    applyRepeat(dto, g);
     dtos.push(dto);
     resolved.push(res);
   });
