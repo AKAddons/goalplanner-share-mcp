@@ -30,14 +30,24 @@ const rows = json.bucket;
 if (!Array.isArray(rows)) throw new Error(`unexpected response shape: ${JSON.stringify(json).slice(0, 200)}`);
 
 const TIERS = new Set(["Easy", "Medium", "Hard", "Elite", "Master", "Grandmaster"]);
+// The plugin reads CA_TASK_COMPLETED_0..19 and rejects caTaskId > 639
+// (GoalCreationService). The game has since added _20 (ids 640–671): those
+// tasks are skipped until the plugin tracks them, so the crafter never emits
+// a goal the recipient drops.
+const MAX_PLUGIN_TASK_ID = 639;
 const seenIds = new Set();
 const cas = [];
+const skipped = [];
 for (const r of rows) {
   const id = Number(r.id);
   const name = String(r.name ?? "").trim();
   const tier = String(r.tier ?? "").trim();
   if (!name || Number.isNaN(id)) throw new Error(`malformed row: ${JSON.stringify(r)}`);
-  if (id < 0 || id > 639) throw new Error(`task id ${id} (${name}) outside the 0–639 varplayer bit range`);
+  if (id > MAX_PLUGIN_TASK_ID && id < 32 * 21) {
+    skipped.push(`${id} ${name}`);
+    continue;
+  }
+  if (id < 0 || id > MAX_PLUGIN_TASK_ID) throw new Error(`task id ${id} (${name}) outside the varplayer bit range`);
   if (seenIds.has(id)) throw new Error(`duplicate task id ${id} (${name})`);
   seenIds.add(id);
   if (!TIERS.has(tier)) throw new Error(`unknown tier "${tier}" for ${name}`);
@@ -97,3 +107,6 @@ console.log(
     .map(([t, n]) => `${t}: ${n}`)
     .join(", ")})`,
 );
+if (skipped.length) {
+  console.warn(`skipped ${skipped.length} tasks above id ${MAX_PLUGIN_TASK_ID} (plugin can't track them yet): ${skipped.join("; ")}`);
+}

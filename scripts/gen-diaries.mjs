@@ -1,9 +1,9 @@
 // Regenerate src/refdata/diaries.data.ts from TWO sources:
-//   1. the plugin's AchievementDiaryData.java — the (area, tier) structure, which
-//      VarbitID constant tracks each, and the required value (1 for boolean
-//      COMPLETE varbits; Karamja Easy/Med/Hard use COUNT varbits with a task total).
-//   2. the OSRS cache varbittypes.txt — resolves each symbolic VarbitID constant
-//      to its NUMERIC id (the runtime varbit the recipient's DiaryTracker reads).
+//   1. the plugin's diary-completion-varbits.tsv (numeric boolean COMPLETE
+//      varbits, required value 1) and AchievementDiaryData.java's Karamja
+//      Easy/Med/Hard COUNT varbits (symbolic VarbitID constant + task total).
+//   2. the OSRS cache varbittypes.txt — resolves each symbolic Karamja VarbitID
+//      constant to its NUMERIC id (the runtime varbit the recipient's DiaryTracker reads).
 //
 // The plugin's `VarbitID.ARDOUGNE_DIARY_EASY_COMPLETE` is exactly the uppercase of
 // the cache varbit name `ardougne_diary_easy_complete`, so the join is name-based.
@@ -32,6 +32,7 @@ function findOsrsDataDir() {
 const repo = process.env.GOAL_PLANNER_REPO || resolve(here, "..", "..", "runelite-goal-planner");
 const diarySrc = join(repo, "src/main/java/com/goalplanner/data/AchievementDiaryData.java");
 const java = readFileSync(diarySrc, "utf8");
+const completionSrc = join(repo, "src/main/resources/com/goalplanner/data/diary-completion-varbits.tsv");
 
 // varbit cache name (lowercase) → numeric id, from the OSRS data.
 const varbitName2Id = new Map();
@@ -53,9 +54,10 @@ const resolveVarbit = (constName) => {
 // (area, tier) → { varbitId, requiredValue }
 const entries = [];
 
-// Boolean COMPLETE varbits: put("AREA", Tier.X, VarbitID.CONST);
-for (const m of java.matchAll(/put\(\s*"(\w+)"\s*,\s*Tier\.(\w+)\s*,\s*VarbitID\.(\w+)\s*\)/g)) {
-  entries.push({ area: m[1], tier: m[2], varbitId: resolveVarbit(m[3]), requiredValue: 1 });
+// Boolean COMPLETE varbits, externalized to a resource: "AREA|TIER<TAB>varbitId".
+for (const line of readFileSync(completionSrc, "utf8").split(/\r?\n/)) {
+  const m = /^(\w+)\|(\w+)\t(\d+)$/.exec(line.trim());
+  if (m) entries.push({ area: m[1], tier: m[2], varbitId: Number.parseInt(m[3], 10), requiredValue: 1 });
 }
 // Karamja COUNT varbits: KARAMJA_COUNT_VARBITS.put(Tier.X, new Tracking(VarbitID.CONST, N));
 for (const m of java.matchAll(/KARAMJA_COUNT_VARBITS\.put\(\s*Tier\.(\w+)\s*,\s*new Tracking\(\s*VarbitID\.(\w+)\s*,\s*(\d+)\s*\)/g)) {

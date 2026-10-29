@@ -60,7 +60,7 @@ public class QuestDump {
   const out = execFileSync(javaBin(), ["-cp", jar, dump], { encoding: "utf8" });
   const quests = out
     .trim()
-    .split("\n")
+    .split(/\r?\n/) // Windows java prints CRLF
     .map((line) => {
       const [enumName, questId, displayName] = line.split("\t");
       if (!enumName || !displayName || Number.isNaN(Number(questId))) {
