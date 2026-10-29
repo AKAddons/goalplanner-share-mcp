@@ -43,10 +43,14 @@ describe("combat-achievement resolution", () => {
 
   it("validates explicit task ids", () => {
     expect(isKnownCaTaskId(0)?.name).toBe("Noxious Foe");
+    expect(isKnownCaTaskId(639)?.name).toBe("Camping the King");
+    expect(isKnownCaTaskId(640)).toBeNull();
+  });
+
+  it("covers every slot the plugin's 20 CA varplayers can track (0–639)", () => {
     const used = new Set(CAS.map((c) => c.caTaskId));
-    const gap = [...Array(640).keys()].find((i) => !used.has(i));
-    expect(gap).toBeDefined();
-    expect(isKnownCaTaskId(gap!)).toBeNull();
+    expect([...Array(640).keys()].filter((i) => !used.has(i))).toEqual([]);
+    expect(CAS.every((c) => c.caTaskId <= 639)).toBe(true);
   });
 
   it("suggests tasks for near-miss names (typo-tolerant, monster-aware)", () => {
@@ -86,9 +90,10 @@ describe("COMBAT_ACHIEVEMENT goals in buildBundle", () => {
     expect(resolved[0].tracked).toBe(true);
   });
 
-  it("passes an in-range but unknown caTaskId through UNVERIFIED", () => {
-    const used = new Set(CAS.map((c) => c.caTaskId));
-    const gap = [...Array(640).keys()].find((i) => !used.has(i))!;
+  // Every slot 0–639 is filled as of the 1.0.2 refresh, so this path only runs
+  // again if the wiki ever retires a task id.
+  const gap = [...Array(640).keys()].find((i) => !CAS.some((c) => c.caTaskId === i));
+  it.runIf(gap !== undefined)("passes an in-range but unknown caTaskId through UNVERIFIED", () => {
     const { resolved, warnings } = buildBundle({
       sectionName: "CAs",
       goals: [{ type: "combat_achievement", name: "Mystery task", caTaskId: gap }],
@@ -104,6 +109,20 @@ describe("COMBAT_ACHIEVEMENT goals in buildBundle", () => {
     });
     expect(resolved[0].tracked).toBe(false);
     expect(warnings.some((w) => w.includes("0–639") || w.includes("0-639"))).toBe(true);
+  });
+
+  it("does not emit a tracked goal for a task past the plugin's range (Cordoned Off, id 644)", () => {
+    const byId = buildBundle({
+      sectionName: "CAs",
+      goals: [{ type: "combat_achievement", name: "Cordoned Off", caTaskId: 644 }],
+    });
+    expect(byId.resolved[0].tracked).toBe(false);
+    const byName = buildBundle({
+      sectionName: "CAs",
+      goals: [{ type: "combat_achievement", name: "Cordoned Off" }],
+    });
+    expect(byName.resolved[0].tracked).toBe(false);
+    expect(byName.bundle.goals[0].type).not.toBe("COMBAT_ACHIEVEMENT");
   });
 
   it("falls back to CUSTOM with suggestions when the name is unresolvable", () => {

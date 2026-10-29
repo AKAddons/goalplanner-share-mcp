@@ -7,7 +7,7 @@
  *
  * GENERATED — do not hand-edit. Regenerate with `npm run gen:item-sources`
  * (see scripts/gen-item-sources.mjs). Source: the plugin's item-sources.tsv
- * (3815 rows). One `id<TAB>label<TAB>category` per line; an item
+ * (3835 rows). One `id<TAB>label<TAB>category` per line; an item
  * may have several rows (multiple sources).
  */
 
@@ -3825,4 +3825,24 @@ export const PACKED_ITEM_SOURCES = `5883	Abyssal Sire	BOSS
 34027	Mad Angel	BOSS
 34030	Mad Angel	BOSS
 34033	Mad Angel	BOSS
-34042	Mad Angel	BOSS`;
+34042	Mad Angel	BOSS
+34646	The Fractured Archive	RAID
+34717	The Fractured Archive	RAID
+34715	The Fractured Archive	RAID
+34681	The Fractured Archive	RAID
+34727	The Fractured Archive	RAID
+34725	The Fractured Archive	RAID
+34719	The Fractured Archive	RAID
+34679	The Fractured Archive	RAID
+34675	The Fractured Archive	RAID
+34677	The Fractured Archive	RAID
+34673	The Fractured Archive	RAID
+34671	The Fractured Archive	RAID
+34669	The Fractured Archive	RAID
+34722	The Fractured Archive	RAID
+34723	The Fractured Archive	RAID
+34659	The Fractured Archive	RAID
+34661	The Fractured Archive	RAID
+34663	The Fractured Archive	RAID
+34665	The Fractured Archive	RAID
+34667	The Fractured Archive	RAID`;

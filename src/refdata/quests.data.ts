@@ -7,7 +7,7 @@
  *
  * GENERATED — do not hand-edit. Regenerate with `npm run gen:quests` (runs the
  * enum from the local runelite-api jar; see scripts/gen-quests.mjs).
- * Source: runelite-api env-override (211 quests).
+ * Source: runelite-api 1.13.4 (214 quests).
  */
 
 export interface QuestRef {
@@ -23,6 +23,7 @@ export const QUESTS: readonly QuestRef[] = [
   { enumName: "A_KINGDOM_DIVIDED", questId: 81, displayName: "A Kingdom Divided" },
   { enumName: "A_NIGHT_AT_THE_THEATRE", questId: 104, displayName: "A Night at the Theatre" },
   { enumName: "A_PORCINE_OF_INTEREST", questId: 110, displayName: "A Porcine of Interest" },
+  { enumName: "A_RUFF_SITUATION", questId: 16971, displayName: "A Ruff Situation" },
   { enumName: "A_SOULS_BANE", questId: 138, displayName: "A Soul's Bane" },
   { enumName: "A_TAIL_OF_TWO_CATS", questId: 142, displayName: "A Tail of Two Cats" },
   { enumName: "A_TASTE_OF_HOPE", questId: 144, displayName: "A Taste of Hope" },
@@ -46,6 +47,7 @@ export const QUESTS: readonly QuestRef[] = [
   { enumName: "COLD_WAR", questId: 15, displayName: "Cold War" },
   { enumName: "CONTACT", questId: 16, displayName: "Contact!" },
   { enumName: "COOKS_ASSISTANT", questId: 17, displayName: "Cook's Assistant" },
+  { enumName: "CRAB_QUEST", questId: 16972, displayName: "Crab Quest" },
   { enumName: "CREATURE_OF_FENKENSTRAIN", questId: 19, displayName: "Creature of Fenkenstrain" },
   { enumName: "CURRENT_AFFAIRS", questId: 7105, displayName: "Current Affairs" },
   { enumName: "CURSE_OF_THE_EMPTY_LORD", questId: 20, displayName: "Curse of the Empty Lord" },
@@ -189,6 +191,7 @@ export const QUESTS: readonly QuestRef[] = [
   { enumName: "THE_FEUD", questId: 50, displayName: "The Feud" },
   { enumName: "THE_FINAL_DAWN", questId: 5189, displayName: "The Final Dawn" },
   { enumName: "THE_FORSAKEN_TOWER", questId: 54, displayName: "The Forsaken Tower" },
+  { enumName: "THE_FRACTURED_ARCHIVE", questId: 17027, displayName: "The Fractured Archive" },
   { enumName: "THE_FREMENNIK_EXILES", questId: 55, displayName: "The Fremennik Exiles" },
   { enumName: "THE_FREMENNIK_ISLES", questId: 56, displayName: "The Fremennik Isles" },
   { enumName: "THE_FREMENNIK_TRIALS", questId: 57, displayName: "The Fremennik Trials" },
