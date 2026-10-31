@@ -6,7 +6,7 @@
  *
  * GENERATED — do not hand-edit. Regenerate with `npm run gen:cas` (fetches the
  * wiki bucket API; see scripts/gen-cas.mjs).
- * Source: 637 tasks (Easy 41, Hard 85, Elite 162, Master 168, Grandmaster 121, Medium 60).
+ * Source: 640 tasks (Easy 41, Hard 86, Elite 163, Master 169, Grandmaster 121, Medium 60).
  */
 
 export interface CaRef {
@@ -660,6 +660,9 @@ export const CAS: readonly CaRef[] = [
   { caTaskId: 634, name: "Brutus Speed-Trialist", tier: "Elite", monster: "Brutus", type: "Speed" },
   { caTaskId: 635, name: "Beef vs Beef", tier: "Medium", monster: "Brutus", type: "Perfection" },
   { caTaskId: 636, name: "Smarter than a Cow", tier: "Hard", monster: "Brutus", type: "Mechanical" },
+  { caTaskId: 637, name: "Maggot Squasher", tier: "Hard", monster: "Maggot King", type: "Kill Count" },
+  { caTaskId: 638, name: "Maggot Exterminator", tier: "Elite", monster: "Maggot King", type: "Kill Count" },
+  { caTaskId: 639, name: "Camping the King", tier: "Master", monster: "Maggot King", type: "Stamina" },
 ];
 
 export const CA_COUNT = CAS.length;

@@ -14,6 +14,7 @@ carries the real ordering.
 | [0002](docs/decisions/0002-item-name-to-id-resolver-sourced-from-objtypes.md) | Source the ITEM_GRIND name-to-id resolver from objtypes plus a curated alias map | accepted |
 | [0003](docs/decisions/0003-charged-weapon-variants-resolve-to-the-charged-id.md) | Plain wiki names of chargeable weapons resolve to the CHARGED item id | accepted |
 | [0004](docs/decisions/0004-cross-section-relation-ids-explicit-only-local-wins.md) | Cross-section relation ids: explicit ids only, local wins, ambiguity drops | accepted |
+| [0005](docs/decisions/0005-new-item-ids-topped-up-from-gameval.md) | Item ids newer than the objtypes snapshot come from RuneLite's gameval.ItemID | accepted |
 
 Numbering restarts per repo. Decisions in the plugin repo are cited in full —
 `runelite-goal-planner ADR-0002` — never as a bare number, since a bare number

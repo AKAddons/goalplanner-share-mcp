@@ -1,0 +1,43 @@
+# Copied from ajkatz/discord-hub templates/discord-announce.yml.
+# Secrets in this repo: DISCORD_WEBHOOK_URL = the SAME webhook as
+# AKAddons/runelite-goal-planner, so posts land in the Goal Planner channel;
+# ANTHROPIC_API_KEY (optional; without it the post is a plain commit list).
+name: Announce pushes to Discord
+
+on:
+  push:
+    branches: [main]
+  # Make-up announcement for a push that went unannounced: Actions -> this
+  # workflow -> Run workflow, from = the last commit or tag already announced.
+  workflow_dispatch:
+    inputs:
+      from:
+        description: "Announce every commit after this ref (sha or tag)"
+        required: true
+        type: string
+      to:
+        description: "...up to this ref (default the branch head)"
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: discord-announce-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  announce:
+    uses: ajkatz/discord-hub/.github/workflows/announce.yml@main
+    with:
+      project_name: "Goal Planner AI companion"
+      project_description: "goalplanner-share-mcp is the MCP server that lets an AI assistant build Goal Planner share codes (GPSHARE) a player imports into the RuneLite Goal Planner plugin."
+      replay_from: ${{ inputs.from }}
+      replay_to: ${{ inputs.to }}
+    # Named on purpose: inheriting secrets does not cross from an org-owned repo to a
+    # user-owned reusable workflow (Loadout Lab failed with "required, but not provided").
+    secrets:
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

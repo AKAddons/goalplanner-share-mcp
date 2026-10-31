@@ -69,7 +69,7 @@ const CASES: Case[] = [
   // ── Boss drops (misc) ────────────────────────────────────────────────────
   item("Dragon Hunter Wand", "Dragon hunter wand", "Dragon hunter wand"),
   item("Zamorak Hilt", "Zamorak hilt", "Zamorak hilt"),
-  item("Staff of the Dead", "Staff of the dead", "Staff of the dead"),
+  item("Staff of the Dead", "Staff of the Dead", "Staff of the Dead"),
   item("Serp Visage", "Serp visage", "Serpentine visage"),
   item("Venator Ring", "Venator ring", "Venator ring"),
   item("Bellator Ring", "Bellator ring", "Bellator ring"),
@@ -78,7 +78,7 @@ const CASES: Case[] = [
   item("Voidwaker Blade", "Voidwaker blade", "Voidwaker blade"),
   item("Voidwaker Hilt", "Voidwaker hilt", "Voidwaker hilt"),
   item("Voidwaker Gem", "Voidwaker gem", "Voidwaker gem"),
-  item("Claws of Callisto", "Claws of callisto", "Claws of callisto"),
+  item("Claws of Callisto", "Claws of Callisto", "Claws of Callisto"),
   // ── Nex ──────────────────────────────────────────────────────────────────
   item("Torva full helm", "Torva full helm", "Torva full helm"),
   item("Torva Platebody", "Torva platebody", "Torva platebody"),
@@ -120,7 +120,7 @@ const CASES: Case[] = [
   item("Eye of the Duke", "Eye of the duke", "Eye of the duke"),
   item("Blood Torva (3/4)", "Blood torva", "Ancient blood ornament kit", 3),
   // ── Pets / jars ──────────────────────────────────────────────────────────
-  item("Jar of chemicals", "Jar of chemicals", "Jar of chemicals"),
+  item("Jar of chemicals", "Jar of Chemicals", "Jar of Chemicals"),
   item("Moxi", "Moxi", "Moxi"),
   item("Jar of venom", "Jar of venom", "Jar of venom"),
   item("Callisto's Cub", "Callisto cub", "Callisto cub"),

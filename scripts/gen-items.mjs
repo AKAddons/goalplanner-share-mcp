@@ -11,10 +11,20 @@
 // (name "null"/empty) are dropped. Everything else (incl. _lava/_ice/_t variants)
 // is kept; the base codename wins an exact-name match, variants only match when the
 // user spells the suffix out.
-import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
+//
+// New-content supplement: the mcp-osrs objtypes snapshot lags game updates by
+// months, so ids ABOVE its highest id are taken from the RuneLite API's
+// `gameval.ItemID` constants (the plugin's own authoritative id source). Those
+// constant names are the cache codenames uppercased, with Java-identifier
+// mangling (`+` → `_`, a leading `_` before a digit) — only new ids are
+// added, so existing codenames never change.
+//   RUNELITE_API_JAR=/path/to/runelite-api-X.Y.Z.jar  (else the newest jar in
+//     ~/.gradle/caches); JAVA_HOME=/path/to/jdk (else zulu-21, else `java`)
+import { readFileSync, writeFileSync, existsSync, readdirSync, mkdtempSync, rmSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, join, resolve } from "node:path";
-import { homedir } from "node:os";
+import { homedir, tmpdir } from "node:os";
 
 const here = dirname(fileURLToPath(import.meta.url));
 
@@ -65,6 +75,75 @@ for (const line of raw.split("\n")) {
 }
 
 if (byCodename.size === 0) throw new Error(`no items parsed from ${src}`);
+const objtypesCount = byCodename.size;
+const maxObjId = Math.max(...byCodename.values());
+
+function discoverJar() {
+  if (process.env.RUNELITE_API_JAR) return { jar: process.env.RUNELITE_API_JAR, version: "env-override" };
+  const root = join(homedir(), ".gradle/caches/modules-2/files-2.1/net.runelite/runelite-api");
+  if (!existsSync(root)) throw new Error(`no gradle cache at ${root} — set RUNELITE_API_JAR`);
+  const versions = readdirSync(root).sort((a, b) =>
+    a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }),
+  );
+  for (const v of versions.reverse()) {
+    for (const hash of readdirSync(join(root, v))) {
+      const jar = join(root, v, hash, `runelite-api-${v}.jar`);
+      if (existsSync(jar)) return { jar, version: v };
+    }
+  }
+  throw new Error(`no runelite-api jar found under ${root} — set RUNELITE_API_JAR`);
+}
+
+function javaBin() {
+  const home = process.env.JAVA_HOME || "/Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home";
+  const candidate = join(home, "bin/java");
+  return existsSync(candidate) ? candidate : "java";
+}
+
+const { jar, version: apiVersion } = discoverJar();
+const work = mkdtempSync(join(tmpdir(), "gen-items-"));
+let gameval;
+try {
+  const dump = join(work, "ItemDump.java");
+  writeFileSync(
+    dump,
+    `import java.lang.reflect.Field;
+public class ItemDump {
+    public static void main(String[] args) throws Exception {
+        for (Field f : net.runelite.api.gameval.ItemID.class.getFields()) {
+            if (f.getType() == int.class) System.out.println(f.getInt(null) + "\\t" + f.getName());
+        }
+    }
+}
+`,
+  );
+  gameval = execFileSync(javaBin(), ["-cp", jar, dump], { encoding: "utf8", maxBuffer: 64 << 20 });
+} finally {
+  rmSync(work, { recursive: true, force: true });
+}
+
+const newer = [];
+for (const line of gameval.split(/\r?\n/)) {
+  const [idStr, name] = line.split("\t");
+  const id = Number.parseInt(idStr, 10);
+  if (!name || !Number.isInteger(id) || id <= maxObjId) continue;
+  newer.push([id, name.toLowerCase().replace(/^_(?=\d)/, "")]);
+}
+newer.sort((a, b) => a[0] - b[0]);
+let added = 0;
+for (const [id, codename] of newer) {
+  if (codename.startsWith("placeholder_") || codename.startsWith("cert_")) {
+    dropped++;
+    continue;
+  }
+  if (byCodename.has(codename)) {
+    dupes++;
+    continue;
+  }
+  byCodename.set(codename, id);
+  added++;
+}
+if (added === 0) console.warn(`warning: runelite-api ${apiVersion} added no items above id ${maxObjId}`);
 
 // Pack as "id\tcodename" lines, id-ascending — compact + diff-friendly.
 const packed = [...byCodename.entries()]
@@ -75,13 +154,15 @@ const packed = [...byCodename.entries()]
 const out = join(here, "..", "src", "refdata", "items.data.ts");
 const content = `/**
  * Item reference data — \`itemId → internal codename\` for every real OSRS item,
- * from the OSRS cache \`objtypes.txt\` (JayArrowz mcp-osrs). Bank placeholders
+ * from the OSRS cache \`objtypes.txt\` (JayArrowz mcp-osrs), topped up with newer
+ * content from RuneLite's \`gameval.ItemID\`. Bank placeholders
  * (\`placeholder_*\`) and noted certs (\`cert_*\`) are filtered out; the plugin's
  * ItemTracker counts an EXACT itemId, so an ITEM_GRIND goal must carry the base
  * tradeable id.
  *
  * GENERATED — do not hand-edit. Regenerate with \`npm run gen:items\`
- * (see scripts/gen-items.mjs). Source: objtypes.txt (${byCodename.size} items).
+ * (see scripts/gen-items.mjs). Source: objtypes.txt (${objtypesCount} items) plus
+ * runelite-api ${apiVersion} gameval.ItemID for ids above ${maxObjId} (${added} items).
  *
  * Packed as one \`id<TAB>codename\` per line; refdata/items.ts builds the lookup
  * indexes from this once at module load.
@@ -92,5 +173,5 @@ export const PACKED_ITEMS = \`${packed}\`;
 
 writeFileSync(out, content);
 console.log(
-  `wrote ${out} with ${byCodename.size} items (dropped ${dropped} placeholder/cert/null, ${dupes} dup codenames) from ${src}`,
+  `wrote ${out} with ${byCodename.size} items (${added} from runelite-api ${apiVersion}; dropped ${dropped} placeholder/cert/null, ${dupes} dup codenames) from ${src}`,
 );

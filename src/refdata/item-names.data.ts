@@ -7,7 +7,7 @@
  *
  * GENERATED — do not hand-edit. Regenerate with `npm run gen:item-names`
  * (fetches the wiki prices mapping; see scripts/gen-item-names.mjs).
- * Source: 4572 tradeable items.
+ * Source: 4674 tradeable items.
  */
 
 export const PACKED_ITEM_NAMES = `2	Steel cannonball
@@ -117,7 +117,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 239	White berries
 241	Dragon scale dust
 243	Blue dragon scale
-245	Wine of zamorak
+245	Wine of Zamorak
 247	Jangerberries
 249	Guam leaf
 251	Marrentill
@@ -343,7 +343,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 970	Papyrus
 973	Charcoal
 975	Machete
-981	Disk of returning
+981	Disk of Returning
 983	Brass key
 985	Tooth half of key
 987	Loop half of key
@@ -901,7 +901,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 2572	Ring of wealth
 2577	Ranger boots
 2579	Wizard boots
-2581	Robin hood hat
+2581	Robin Hood hat
 2583	Black platebody (t)
 2585	Black platelegs (t)
 2587	Black full helm (t)
@@ -2242,7 +2242,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 9729	Elemental helmet
 9731	Mind shield
 9733	Mind helmet
-9735	Desert goat horn
+9735	Goat horn
 9736	Goat horn dust
 9739	Combat potion(4)
 9741	Combat potion(3)
@@ -2386,18 +2386,18 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 10324	Bob's purple shirt
 10326	Purple firelighter
 10327	White firelighter
-10330	3rd age range top
-10332	3rd age range legs
-10334	3rd age range coif
-10336	3rd age vambraces
-10338	3rd age robe top
-10340	3rd age robe
-10342	3rd age mage hat
-10344	3rd age amulet
-10346	3rd age platelegs
-10348	3rd age platebody
-10350	3rd age full helmet
-10352	3rd age kiteshield
+10330	3rd Age range top
+10332	3rd Age range legs
+10334	3rd Age range coif
+10336	3rd Age vambraces
+10338	3rd Age robe top
+10340	3rd Age robe
+10342	3rd Age mage hat
+10344	3rd Age amulet
+10346	3rd Age platelegs
+10348	3rd Age platebody
+10350	3rd Age full helmet
+10352	3rd Age kiteshield
 10354	Amulet of glory (t4)
 10362	Amulet of glory (t)
 10364	Strength amulet (t)
@@ -2470,7 +2470,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 10822	Yak-hide armour (top)
 10824	Yak-hide armour (legs)
 10826	Neitiznot shield
-10828	Helm of neitiznot
+10828	Helm of Neitiznot
 10891	Wooden cat
 10925	Sanfew serum(4)
 10927	Sanfew serum(3)
@@ -2615,7 +2615,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 11785	Armadyl crossbow
 11787	Steam battlestaff
 11789	Mystic steam staff
-11791	Staff of the dead
+11791	Staff of the Dead
 11798	Godsword blade
 11802	Armadyl godsword
 11804	Bandos godsword
@@ -2642,7 +2642,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 11876	Unfinished broad bolts
 11889	Zamorakian hasta
 11902	Leaf-bladed sword
-11905	Trident of the seas (full)
+11905	Trident of the Seas (full)
 11908	Uncharged trident
 11920	Dragon pickaxe
 11924	Malediction ward
@@ -2676,7 +2676,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 12000	Mystic smoke staff
 12002	Occult necklace
 12004	Kraken tentacle
-12007	Jar of dirt
+12007	Jar of Dirt
 12193	Ancient robe top
 12195	Ancient robe legs
 12197	Ancient cloak
@@ -2792,14 +2792,14 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 12410	Iorwerth camp teleport
 12411	Mos le'harmless teleport
 12412	Pirate hat & patch
-12422	3rd age wand
-12424	3rd age bow
-12426	3rd age longsword
+12422	3rd Age wand
+12424	3rd Age bow
+12426	3rd Age longsword
 12428	Penguin mask
 12430	Afro
 12432	Top hat
 12434	Top hat & monocle
-12437	3rd age cloak
+12437	3rd Age cloak
 12439	Royal sceptre
 12441	Musketeer tabard
 12443	Musketeer pants
@@ -2879,6 +2879,8 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 12697	Super combat potion(3)
 12699	Super combat potion(2)
 12701	Super combat potion(1)
+12746	Archaic emblem (tier 1)
+12751	Archaic emblem (tier 5)
 12757	Blue dark bow paint
 12759	Green dark bow paint
 12761	Yellow dark bow paint
@@ -2911,7 +2913,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 12833	Holy elixir
 12846	Target teleport scroll
 12849	Granite clamp
-12851	Amulet of the damned (full)
+12851	Amulet of the Damned (full)
 12863	Dwarf cannon set
 12865	Green dragonhide set
 12867	Blue dragonhide set
@@ -2923,7 +2925,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 12879	Torag's armour set
 12881	Ahrim's armour set
 12883	Karil's armour set
-12885	Jar of sand
+12885	Jar of Sand
 12900	Uncharged toxic trident
 12902	Toxic staff (uncharged)
 12905	Anti-venom(4)
@@ -2940,7 +2942,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 12929	Serpentine helm (uncharged)
 12932	Magic fang
 12934	Zulrah's scales
-12936	Jar of swamp
+12936	Jar of Swamp
 12938	Zul-andra teleport
 12960	Bronze set (lg)
 12962	Bronze set (sk)
@@ -2998,10 +3000,10 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 13066	Super potion set
 13149	Holy book page set
 13151	Unholy book page set
-13153	Book of balance page set
-13155	Book of war page set
-13157	Book of law page set
-13159	Book of darkness page set
+13153	Book of Balance page set
+13155	Book of War page set
+13157	Book of Law page set
+13159	Book of Darkness page set
 13161	Zamorak dragonhide set
 13163	Saradomin dragonhide set
 13165	Guthix dragonhide set
@@ -3018,7 +3020,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 13235	Eternal boots
 13237	Pegasian boots
 13239	Primordial boots
-13245	Jar of souls
+13245	Jar of Souls
 13249	Key master teleport
 13256	Saradomin's light
 13263	Abyssal bludgeon
@@ -3026,7 +3028,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 13267	Abyssal dagger (p)
 13269	Abyssal dagger (p+)
 13271	Abyssal dagger (p++)
-13277	Jar of miasma
+13277	Jar of Miasma
 13383	Xerician fabric
 13385	Xerician hat
 13387	Xerician top
@@ -3114,7 +3116,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 19665	Damaged monkey tail
 19669	Redwood logs
 19672	Redwood pyre logs
-19701	Jar of darkness
+19701	Jar of Darkness
 19707	Amulet of eternal glory
 19724	Left eye patch
 19727	Double eye patch
@@ -3149,8 +3151,8 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 20002	Dragon scimitar ornament kit
 20005	Ring of nature
 20008	Fancy tiara
-20011	3rd age axe
-20014	3rd age pickaxe
+20011	3rd Age axe
+20014	3rd Age pickaxe
 20017	Ring of coins
 20020	Lesser demon mask
 20023	Greater demon mask
@@ -3249,7 +3251,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 20520	Elder chaos robe
 20590	Stale baguette
 20595	Elder chaos hood
-20716	Tome of fire (empty)
+20716	Tome of Fire (empty)
 20718	Burnt page
 20724	Imbued heart
 20727	Leaf-bladed battleaxe
@@ -3353,7 +3355,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 21736	Granite gloves
 21739	Granite ring
 21742	Granite hammer
-21745	Jar of stone
+21745	Jar of Stone
 21754	Rock thrownhammer
 21802	Revenant cave teleport
 21804	Ancient crystal
@@ -3409,7 +3411,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 22097	Dragon metal shard
 22100	Dragon metal slice
 22103	Dragon metal lump
-22106	Jar of decay
+22106	Jar of Decay
 22111	Dragonbone necklace
 22118	Wrath talisman
 22121	Wrath tiara
@@ -3443,7 +3445,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 22284	Black d'hide shield
 22290	Uncharged trident (e)
 22294	Uncharged toxic trident (e)
-22296	Staff of light
+22296	Staff of Light
 22299	Ancient medallion
 22302	Ancient effigy
 22305	Ancient relic
@@ -3467,7 +3469,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 22470	Bastion potion(1)
 22477	Avernic defender hilt
 22481	Sanguinesti staff (uncharged)
-22486	Scythe of vitur (uncharged)
+22486	Scythe of Vitur (uncharged)
 22542	Viggora's chainmace (u)
 22547	Craw's bow (u)
 22552	Thammaron's sceptre (u)
@@ -3526,7 +3528,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 22932	White lily
 22935	Celastrus bark
 22949	Battlefront teleport (tablet)
-22951	Boots of brimstone
+22951	Boots of Brimstone
 22954	Devout boots
 22957	Drake's claw
 22960	Drake's tooth
@@ -3545,13 +3547,13 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 23053	Mystic robe bottom (dusk)
 23056	Mystic gloves (dusk)
 23059	Mystic boots (dusk)
-23064	Jar of chemicals
+23064	Jar of Chemicals
 23110	Mystic set (light)
 23113	Mystic set (blue)
 23116	Mystic set (dark)
 23119	Mystic set (dusk)
 23124	Gilded dragonhide set
-23185	Ring of 3rd age
+23185	Ring of 3rd Age
 23188	Guthix d'hide shield
 23191	Saradomin d'hide shield
 23194	Zamorak d'hide shield
@@ -3568,7 +3570,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 23227	Rune defender ornament kit
 23232	Tzhaar-ket-om ornament kit
 23237	Berserker necklace ornament kit
-23242	3rd age plateskirt
+23242	3rd Age plateskirt
 23246	Fremennik kilt
 23249	Rangers' tights
 23252	Giant boot
@@ -3594,19 +3596,19 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 23312	Sandwich lady hat
 23315	Sandwich lady top
 23318	Sandwich lady bottom
-23321	Rune scimitar ornament kit (guthix)
-23324	Rune scimitar ornament kit (saradomin)
-23327	Rune scimitar ornament kit (zamorak)
-23336	3rd age druidic robe top
-23339	3rd age druidic robe bottoms
-23342	3rd age druidic staff
-23345	3rd age druidic cloak
+23321	Rune scimitar ornament kit (Guthix)
+23324	Rune scimitar ornament kit (Saradomin)
+23327	Rune scimitar ornament kit (Zamorak)
+23336	3rd Age druidic robe top
+23339	3rd Age druidic robe bottoms
+23342	3rd Age druidic staff
+23345	3rd Age druidic cloak
 23348	Tormented ornament kit
 23351	Cape of skulls
 23354	Amulet of power (t)
 23357	Rain bow
 23360	Ham joint
-23363	Staff of bob the cat
+23363	Staff of Bob the Cat
 23366	Black platebody (h1)
 23369	Black platebody (h2)
 23372	Black platebody (h3)
@@ -3627,8 +3629,8 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 23490	Larran's key
 23499	Grubby key
 23517	Giant egg sac(full)
-23522	Mask of ranul
-23525	Jar of eyes
+23522	Mask of Ranul
+23525	Jar of Eyes
 23528	Sarachnis cudgel
 23667	Dragonstone armour set
 23685	Divine super combat potion(4)
@@ -3661,7 +3663,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 23953	Crystal tool seed
 23956	Crystal armour seed
 23959	Enhanced crystal teleport seed
-23997	Blade of saeldor (inactive)
+23997	Blade of Saeldor (inactive)
 24000	Crystal grail
 24003	Elven boots
 24006	Elven gloves
@@ -3677,7 +3679,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 24040	Dragonstone platelegs
 24043	Dragonstone boots
 24046	Dragonstone gauntlets
-24144	Staff of balance
+24144	Staff of Balance
 24187	Trouver parchment
 24219	Swift blade
 24229	Ornate maul handle
@@ -3714,7 +3716,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 24472	Twisted relic hunter (t2) armour set
 24475	Twisted relic hunter (t3) armour set
 24488	Inquisitor's armour set
-24495	Jar of dreams
+24495	Jar of Dreams
 24511	Harmonised orb
 24514	Volatile orb
 24517	Eldritch orb
@@ -3793,9 +3795,9 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 25454	Gold locks
 25478	Runescroll of swampbark
 25481	Runescroll of bloodbark
-25521	Jar of spirits
-25524	Jar of smoke
-25576	Tome of water (empty)
+25521	Jar of Spirits
+25524	Jar of Smoke
+25576	Tome of Water (empty)
 25578	Soaked page
 25766	Fiendish ashes
 25769	Vile ashes
@@ -3810,62 +3812,62 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 25855	Amethyst dart(p+)
 25857	Amethyst dart(p++)
 25859	Enhanced crystal weapon seed
-25862	Bow of faerdhinen (inactive)
+25862	Bow of Faerdhinen (inactive)
 25975	Lightbearer
 25985	Elidinis' ward
-25991	Sigil of resilience
-25994	Sigil of consistency
-25997	Sigil of the formidable fighter
-26000	Sigil of the rigorous ranger
-26003	Sigil of the meticulous mage
-26006	Sigil of fortification
-26009	Sigil of barrows
-26012	Sigil of deft strikes
-26015	Sigil of freedom
-26018	Sigil of enhanced harvest
-26021	Sigil of storage
-26024	Sigil of the smith
-26027	Sigil of the alchemist
-26030	Sigil of the fletcher
-26033	Sigil of the chef
-26036	Sigil of the craftsman
-26039	Sigil of the abyss
-26042	Sigil of stamina
-26045	Sigil of the potion master
-26048	Sigil of the eternal jeweller
-26051	Sigil of the treasure hunter
-26054	Sigil of mobility
-26057	Sigil of exaggeration
-26060	Sigil of specialised strikes
-26063	Sigil of the porcupine
-26066	Sigil of binding
-26069	Sigil of escaping
-26072	Sigil of the ruthless ranger
-26075	Sigil of the feral fighter
-26078	Sigil of the menacing mage
-26081	Sigil of prosperity
-26084	Sigil of the dwarves
-26087	Sigil of the elves
-26090	Sigil of the barbarians
-26093	Sigil of the gnomes
-26096	Sigil of nature
-26099	Sigil of devotion
-26102	Sigil of the forager
-26105	Sigil of garments
-26108	Sigil of slaughter
-26111	Sigil of the fortune farmer
-26114	Sigil of versatility
-26117	Sigil of the serpent
-26120	Sigil of supreme stamina
-26123	Sigil of preservation
-26126	Sigil of finality
-26129	Sigil of pious protection
-26132	Sigil of aggression
-26135	Sigil of rampage
-26138	Sigil of the skiller
-26141	Sigil of remote storage
-26144	Sigil of last recall
-26147	Sigil of the guardian angel
+25991	Sigil of Resilience
+25994	Sigil of Consistency
+25997	Sigil of the Formidable Fighter
+26000	Sigil of the Rigorous Ranger
+26003	Sigil of the Meticulous Mage
+26006	Sigil of Fortification
+26009	Sigil of Barrows
+26012	Sigil of Deft Strikes
+26015	Sigil of Freedom
+26018	Sigil of Enhanced Harvest
+26021	Sigil of Storage
+26024	Sigil of the Smith
+26027	Sigil of the Alchemist
+26030	Sigil of the Fletcher
+26033	Sigil of the Chef
+26036	Sigil of the Craftsman
+26039	Sigil of the Abyss
+26042	Sigil of Stamina
+26045	Sigil of the Potion Master
+26048	Sigil of the Eternal Jeweller
+26051	Sigil of the Treasure Hunter
+26054	Sigil of Mobility
+26057	Sigil of Exaggeration
+26060	Sigil of Specialised Strikes
+26063	Sigil of the Porcupine
+26066	Sigil of Binding
+26069	Sigil of Escaping
+26072	Sigil of the Ruthless Ranger
+26075	Sigil of the Feral Fighter
+26078	Sigil of the Menacing Mage
+26081	Sigil of Prosperity
+26084	Sigil of the Dwarves
+26087	Sigil of the Elves
+26090	Sigil of the Barbarians
+26093	Sigil of the Gnomes
+26096	Sigil of Nature
+26099	Sigil of Devotion
+26102	Sigil of the Forager
+26105	Sigil of Garments
+26108	Sigil of Slaughter
+26111	Sigil of the Fortune Farmer
+26114	Sigil of Versatility
+26117	Sigil of the Serpent
+26120	Sigil of Supreme Stamina
+26123	Sigil of Preservation
+26126	Sigil of Finality
+26129	Sigil of Pious Protection
+26132	Sigil of Aggression
+26135	Sigil of Rampage
+26138	Sigil of the Skiller
+26141	Sigil of Remote Storage
+26144	Sigil of Last Recall
+26147	Sigil of the Guardian Angel
 26219	Osmumten's fang
 26221	Ancient ceremonial top
 26223	Ancient ceremonial legs
@@ -3939,7 +3941,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 27238	Masori body (f)
 27241	Masori chaps (f)
 27269	Armadylean plate
-27272	Lily of the sands
+27272	Lily of the Sands
 27277	Tumeken's shadow (uncharged)
 27355	Masori armour set (f)
 27612	Venator bow (uncharged)
@@ -3953,9 +3955,9 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 27652	Webweaver bow (u)
 27657	Ursine chainmace (u)
 27662	Accursed sceptre (u)
-27667	Claws of callisto
-27670	Fangs of venenatis
-27673	Skull of vet'ion
+27667	Claws of Callisto
+27670	Fangs of Venenatis
+27673	Skull of Vet'ion
 27676	Accursed sceptre (au)
 27681	Voidwaker hilt
 27684	Voidwaker blade
@@ -3984,7 +3986,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 28217	Dragon felling axe
 28220	Crystal 2h axe
 28223	Crystal 2h axe (inactive)
-28226	3rd age felling axe
+28226	3rd Age felling axe
 28276	Chromium ingot
 28295	Berserker icon
 28298	Archer icon
@@ -3996,29 +3998,29 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 28316	Bellator ring
 28334	Awakener's orb
 28338	Soulreaper axe
-28478	Sigil of sustenance
-28481	Sigil of hoarding
-28484	Sigil of the alchemaniac
-28487	Sigil of the hunter
-28490	Sigil of resistance
-28493	Sigil of agile fortune
-28496	Sigil of the food master
-28499	Sigil of the well fed
-28502	Sigil of the infernal chef
-28505	Sigil of the infernal smith
-28508	Sigil of the lightbearer
-28511	Sigil of the bloodhound
-28514	Sigil of precision
-28517	Sigil of the augmented thrall
-28520	Sigil of faith
-28523	Sigil of titanium
-28526	Sigil of the ninja
-28529	Sigil of woodcraft
+28478	Sigil of Sustenance
+28481	Sigil of Hoarding
+28484	Sigil of the Alchemaniac
+28487	Sigil of the Hunter
+28490	Sigil of Resistance
+28493	Sigil of Agile Fortune
+28496	Sigil of the Food Master
+28499	Sigil of the Well Fed
+28502	Sigil of the Infernal Chef
+28505	Sigil of the Infernal Smith
+28508	Sigil of the Lightbearer
+28511	Sigil of the Bloodhound
+28514	Sigil of Precision
+28517	Sigil of the Augmented Thrall
+28520	Sigil of Faith
+28523	Sigil of Titanium
+28526	Sigil of the Ninja
+28529	Sigil of Woodcraft
 28531	Corrupted voidwaker
 28534	Corrupted dragon claws
 28537	Corrupted armadyl godsword
 28540	Corrupted twisted bow
-28545	Corrupted scythe of vitur (uncharged)
+28545	Corrupted Scythe of Vitur (uncharged)
 28549	Corrupted tumeken's shadow (uncharged)
 28561	Trinket of vengeance
 28564	Trinket of fairies
@@ -4072,7 +4074,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 28893	Moonlight moth (item)
 28896	Rum
 28899	Wyrmling bones
-28919	Tonalztics of ralos (uncharged)
+28919	Tonalztics of Ralos (uncharged)
 28924	Sunfire splinters
 28929	Sunfire rune
 28931	Searing page
@@ -4080,28 +4082,28 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 28936	Sunfire fanatic cuirass
 28939	Sunfire fanatic chausses
 28942	Echo crystal
-28988	Blue moon spear
+28988	Blue Moon spear
 28991	Atlatl dart
 28997	Dual macuahuitl
 29000	Eclipse atlatl
-29004	Eclipse moon chestplate
-29007	Eclipse moon tassets
-29010	Eclipse moon helm
-29013	Blue moon chestplate
-29016	Blue moon tassets
-29019	Blue moon helm
-29022	Blood moon chestplate
-29025	Blood moon tassets
-29028	Blood moon helm
-29049	Eclipse moon chestplate (broken)
-29052	Eclipse moon tassets (broken)
-29055	Eclipse moon helm (broken)
-29058	Blue moon chestplate (broken)
-29061	Blue moon tassets (broken)
-29064	Blue moon helm (broken)
-29067	Blood moon chestplate (broken)
-29070	Blood moon tassets (broken)
-29073	Blood moon helm (broken)
+29004	Eclipse Moon chestplate
+29007	Eclipse Moon tassets
+29010	Eclipse Moon helm
+29013	Blue Moon chestplate
+29016	Blue Moon tassets
+29019	Blue Moon helm
+29022	Blood Moon chestplate
+29025	Blood Moon tassets
+29028	Blood Moon helm
+29049	Eclipse Moon chestplate (broken)
+29052	Eclipse Moon tassets (broken)
+29055	Eclipse Moon helm (broken)
+29058	Blue Moon chestplate (broken)
+29061	Blue Moon tassets (broken)
+29064	Blue Moon helm (broken)
+29067	Blood Moon chestplate (broken)
+29070	Blood Moon tassets (broken)
+29073	Blood Moon helm (broken)
 29084	Sulphur blades
 29090	Calcified moth
 29098	Not meat
@@ -4167,7 +4169,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 29577	Burning claws
 29580	Tormented synapse
 29599	Corrupted dark bow
-29602	Corrupted volatile nightmare staff
+29602	Corrupted Volatile Nightmare staff
 29619	Armageddon rug
 29622	Armageddon teleport scroll
 29625	Armageddon weapon scroll
@@ -4177,20 +4179,20 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 29637	Blighted overload (2)
 29640	Blighted overload (1)
 29643	Chitin
-29649	Sigil of meticulousness
-29652	Sigil of revoked limitation
-29655	Sigil of the rampart
-29658	Sigil of deception
-29661	Sigil of litheness
-29664	Sigil of the adroit
-29667	Sigil of onslaught
-29670	Sigil of restoration
-29673	Sigil of the swashbuckler
-29676	Sigil of the gunslinger
-29679	Sigil of arcane swiftness
+29649	Sigil of Meticulousness
+29652	Sigil of Revoked Limitation
+29655	Sigil of the Rampart
+29658	Sigil of Deception
+29661	Sigil of Litheness
+29664	Sigil of the Adroit
+29667	Sigil of Onslaught
+29670	Sigil of Restoration
+29673	Sigil of the Swashbuckler
+29676	Sigil of the Gunslinger
+29679	Sigil of Arcane Swiftness
 29684	Guthixian temple teleport
 29782	Spider cave teleport
-29784	Araxyte venom sack
+29784	Araxyte venom sac
 29796	Noxious halberd
 29801	Amulet of rancour
 29806	Aranea boots
@@ -4211,7 +4213,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 29993	Aldarium
 30002	Chugging barrel (disassembled)
 30040	Colossal wyrm teleport scroll
-30066	Tome of earth (empty)
+30066	Tome of Earth (empty)
 30068	Soiled page
 30070	Dragon hunter wand
 30073	Hueycoatl hide coif
@@ -4256,7 +4258,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 30451	Echo ahrim's ornament kit
 30453	Echo home teleport scroll
 30455	Raging echoes death scroll
-30457	Raging echoes npc contact scroll
+30457	Raging echoes astral contact scroll
 30459	Raging echoes nexus scroll
 30461	Raging echoes portal scroll
 30554	Raging echoes rug
@@ -4284,17 +4286,17 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 30775	Chasm teleport scroll
 30795	Barrel of demonic tallow (full)
 30800	Demonic tallow
-30810	Contract of glyphic attenuation
-30813	Contract of sensory clouding
-30816	Contract of bloodied blows
-30819	Contract of divine severance
-30822	Contract of forfeit breath
-30825	Contract of oathplate acquisition
-30828	Contract of shard acquisition
-30831	Contract of catalyst acquisition
-30834	Contract of worm acquisition
-30837	Contract of harmony acquisition
-30840	Contract of familiar acquisition
+30810	Contract of Glyphic Attenuation
+30813	Contract of Sensory Clouding
+30816	Contract of Bloodied Blows
+30819	Contract of Divine Severance
+30822	Contract of Forfeit Breath
+30825	Contract of Oathplate Acquisition
+30828	Contract of Shard Acquisition
+30831	Contract of Catalyst Acquisition
+30834	Contract of Worm Acquisition
+30837	Contract of Harmony Acquisition
+30840	Contract of Familiar Acquisition
 30843	Aether rune
 30848	Crushed infernal shale
 30864	Infernal plate
@@ -4316,10 +4318,10 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 31099	Mokhaiotl waystone
 31106	Confliction gauntlets
 31111	Demon tear
-31115	Eye of ayak (uncharged)
-31136	Blood moon armour set
-31139	Blue moon armour set
-31142	Eclipse moon armour set
+31115	Eye of Ayak (uncharged)
+31136	Blood Moon armour set
+31139	Blue Moon armour set
+31142	Eclipse Moon armour set
 31145	Torva armour set
 31148	Virtus armour set
 31151	Rock-shell armour set
@@ -4340,7 +4342,7 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 31205	Grid master altar icon scroll
 31208	Grid master torch scroll
 31235	Gryphon feather
-31243	Horn of plenty (empty)
+31243	Horn of Plenty (empty)
 31245	Belle's folly (tarnished)
 31248	Belle's folly
 31255	Barnacle blaster
@@ -4567,11 +4569,6 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 33305	Demonic axe ornament kit
 33308	Demonic staff ornament kit
 33311	Demonic trident ornament kit
-33316	Uncharged toxic trident (o)
-33320	Uncharged toxic trident (e) (33320)
-33323	Trident of the seas (full) (o)
-33328	Uncharged trident (e) (o)
-33335	Soulreaper axe (o)
 33342	Demonic quill
 33359	Impish ritual scroll
 33362	Demonic pacts throne scroll
@@ -4581,4 +4578,109 @@ export const PACKED_ITEM_NAMES = `2	Steel cannonball
 33431	Trinket of vengeance (1)
 33451	Demonic pacts relic hunter (t1) armour set
 33454	Demonic pacts relic hunter (t2) armour set
-33457	Demonic pacts relic hunter (t3) armour set`;
+33457	Demonic pacts relic hunter (t3) armour set
+33534	Etched araxyte fang
+33553	Seeking bronze arrow
+33559	Seeking iron arrow
+33565	Seeking steel arrow
+33571	Seeking mithril arrow
+33577	Seeking adamant arrow
+33583	Seeking rune arrow
+33589	Seeking amethyst arrow
+33595	Seeking dragon arrow
+33625	Letvek
+33631	Crimson kisten
+33636	Etched elder venator fang
+33639	Necklace of rupture
+33644	Dummy stymphike feather
+33651	Stymphike feather
+33657	Orikalkum gravel
+33661	Venator fang
+33663	Venator tooth
+33821	Raw impaler meat
+33836	Noble robe top (green)
+33839	Noble robe top (blue)
+33842	Noble robe top (red)
+33845	Noble robe top (yellow)
+33848	Noble robe top (white)
+33851	Noble robe top (black)
+33854	Noble robe top (pink)
+33857	Wyrmscraig noble skirt (green)
+33860	Wyrmscraig noble skirt (blue)
+33863	Wyrmscraig noble skirt (red)
+33866	Wyrmscraig noble skirt (yellow)
+33869	Wyrmscraig noble skirt (white)
+33872	Wyrmscraig noble skirt (black)
+33875	Wyrmscraig noble skirt (pink)
+33878	Wyrmscraig shoes
+33881	Wyrmscraig boots
+33884	Wyrmscraig villager robe top (A, green)
+33887	Wyrmscraig villager robe top (A, blue)
+33890	Wyrmscraig villager robe top (A, red)
+33893	Wyrmscraig villager robe top (A, yellow)
+33896	Wyrmscraig villager robe top (A, white)
+33899	Wyrmscraig villager robe top (A, black)
+33902	Wyrmscraig villager robe top (A, pink)
+33905	Wyrmscraig villager robe top (A, beige)
+33908	Wyrmscraig villager robe bottom (A, green)
+33911	Wyrmscraig villager robe bottom (A, blue)
+33914	Wyrmscraig villager robe bottom (A, red)
+33917	Wyrmscraig villager robe bottom (A, yellow)
+33920	Wyrmscraig villager robe bottom (A, white)
+33923	Wyrmscraig villager robe bottom (A, black)
+33926	Wyrmscraig villager robe bottom (A, pink)
+33929	Wyrmscraig villager robe bottom (B, green)
+33932	Wyrmscraig villager robe bottom (B, blue)
+33935	Wyrmscraig villager robe bottom (B, red)
+33938	Wyrmscraig villager robe bottom (B, yellow)
+33941	Wyrmscraig villager robe bottom (B, white)
+33944	Wyrmscraig villager robe bottom (B, black)
+33947	Wyrmscraig villager robe bottom (B, pink)
+33950	Wyrmscraig villager robe top (B, green)
+33953	Wyrmscraig villager robe top (B, blue)
+33956	Wyrmscraig villager robe top (B, red)
+33959	Wyrmscraig villager robe top (B, yellow)
+33962	Wyrmscraig villager robe top (B, white)
+33965	Wyrmscraig villager robe top (B, black)
+33968	Wyrmscraig villager robe top (B, pink)
+33971	Wyrmscraig villager skirt (green)
+33974	Wyrmscraig villager skirt (blue)
+33977	Wyrmscraig villager skirt (red)
+33980	Wyrmscraig villager skirt (yellow)
+33983	Wyrmscraig villager skirt (white)
+33986	Wyrmscraig villager skirt (black)
+33989	Wyrmscraig villager skirt (pink)
+33992	Wyrmscraig villager work skirt (green)
+33995	Wyrmscraig villager work skirt (blue)
+33998	Wyrmscraig villager work skirt (red)
+34001	Wyrmscraig villager work skirt (yellow)
+34004	Wyrmscraig villager work skirt (white)
+34007	Wyrmscraig villager work skirt (black)
+34010	Wyrmscraig villager work skirt (pink)
+34013	Wyrmscraig villager work skirt (beige)
+34017	Wyrmscraig goat fur
+34027	Hallowfell
+34033	Ardeaglais teleport
+34035	Placeholder
+34401	Necklace of Fangs
+34404	Air diamond
+34407	Amulet of air
+34410	Water sapphire
+34413	Amulet of water
+34416	Earth emerald
+34419	Amulet of earth
+34422	Fire ruby
+34425	Amulet of fire
+34428	Elemental amulet
+34631	Net trap
+34669	Ascension shards
+34679	Horn of Bran
+34681	Ascension crossbows
+34684	Ascension bolts
+34690	Diamond ascension bolts
+34696	Diamond ascension bolts (e)
+34702	Onyx ascension bolts
+34708	Onyx ascension bolts (e)
+34717	Obligator (uncharged)
+34719	Rondache
+34727	Zorya's tome (uncharged)`;
